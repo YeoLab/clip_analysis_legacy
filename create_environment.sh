@@ -11,5 +11,3 @@ conda install -y bx-python;
 conda install -y scikit-learn;
 conda install -y -c bioconda emboss; # unless emboss is already in the path
 conda install -y -c bioconda homer; # unless homer is already in the path
-# already in package directory
-python setup.py install
