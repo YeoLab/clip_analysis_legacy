@@ -20,6 +20,9 @@ Runs HOMER and kmer enrichment aspects from clip_analysis_legacy to generate use
 
 (or run the create_environment.sh script - don't forget to ```source activate analyze_motifs```)
 
+# Installation:
+python setup.py install
+
 # Usage:
 ```
 analyze_motifs \
