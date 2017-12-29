@@ -39,11 +39,11 @@ analyze_motifs \
 
 This package expects the following files inside data/regions:
 
-${SPECIES}_CDS.bed
-${SPECIES}_proxintron500.bed
-${SPECIES}_distintron500.bed
-${SPECIES}_five_prime_utrs.bed
-${SPECIES}_three_prime_utrs.bed
+- ${SPECIES}_CDS.bed
+- ${SPECIES}_proxintron500.bed
+- ${SPECIES}_distintron500.bed
+- ${SPECIES}_five_prime_utrs.bed
+- ${SPECIES}_three_prime_utrs.bed
 
 where $(SPECIES) is something like: 'hg19' or 'hg19_v19'. Analyze_motifs needs these
  regions to define where to select the random backgrounds from.
