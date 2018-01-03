@@ -28,12 +28,12 @@ Runs HOMER and kmer enrichment aspects from clip_analysis_legacy to generate use
 analyze_motifs \
 --clusters inputs/204_01.basedon_204_01.peaks.l2inputnormnew.bed.compressed.Fc3Pv3.bed \  # BED file (from input normalization or IDR)
 --species hg19_v19 \  # sets prefix for finding region bedfiles (see clip_analysis_legacy/data/regions)
+--genome_fasta inputs/all.fa \  # fasta file
 --k 6 \  # k for kmer enrichment score search
 --nrand 1 \  # sets the number of random bedfile regions to generate to form the background
 --out_file outputs/204_01_RBFOX2.svg \  # output motif image file
---pickle outputs/204_01_RBFOX2.pickle \  # output pickle
---genome_fasta inputs/all.fa \  # fasta file
---homer_out outputs/204_01_RBFOX2_homer_out  # directory by which this script uses to store all outputs (will tar this directory at the end)
+--out_pickle_file outputs/204_01_RBFOX2.pickle \  # output pickle
+--out_homer_dir outputs/204_01_RBFOX2_homer_out  # directory by which this script uses to store all outputs (will tar this directory at the end)
 ```
 
 (or see examples/run_analyze_motifs.204_01.sh script)
@@ -45,7 +45,7 @@ In the above example, you do NOT need the 204_01_RBFOX2_homer_out/ to exist, but
 
 This package expects the following files inside data/regions:
 
-- ${SPECIES}_CDS.bed
+- ${SPECIES}_cds.bed
 - ${SPECIES}_proxintron500.bed
 - ${SPECIES}_distintron500.bed
 - ${SPECIES}_five_prime_utrs.bed
@@ -61,6 +61,7 @@ where $(SPECIES) is something like: 'hg19' or 'hg19_v19'. Analyze_motifs needs t
 - GRCh38
 - GRCh38_v24
 - mm9
+- mm10_vM10
 
 ### Using nonsupported species:
 
@@ -69,4 +70,4 @@ If you have the proper GTF file, you can use the create_region_bedfiles
  them into data/regions if they don't exist there already. You will need to
  reinstall the package after doing so.
 
-https://github.com/byee4/annotator/
+https://github.com/Yeolab/annotator/
