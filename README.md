@@ -26,7 +26,7 @@ Runs HOMER and kmer enrichment aspects from clip_analysis_legacy to generate use
 # Usage:
 ```
 analyze_motifs \
---clusters inputs/204_01.basedon_204_01.peaks.l2inputnormnew.bed.compressed.Fc3Pv3.bed \  # BED file (from input normalization or IDR)
+--peaks inputs/204_01.basedon_204_01.peaks.l2inputnormnew.bed.compressed.Fc3Pv3.bed \  # BED file (from input normalization or IDR)
 --species hg19_v19 \  # sets prefix for finding region bedfiles (see clip_analysis_legacy/data/regions)
 --genome_fasta inputs/all.fa \  # fasta file
 --k 6 \  # k for kmer enrichment score search

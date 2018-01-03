@@ -132,7 +132,7 @@ def call_main():
     parser = ArgumentParser()
 
     parser.add_argument(
-        "--clusters",
+        "--peaks",
         help="BED file of clusters"
     )
     parser.add_argument(
@@ -163,7 +163,7 @@ def call_main():
         required=False
     )
     parser.add_argument(
-        "--pickle",
+        "--out_pickle_file",
         help="destination of the pickle output",
         required=True
     )
@@ -173,11 +173,10 @@ def call_main():
         required=True
     )
     parser.add_argument(
-        "--homer_out",
+        "--out_homer_dir",
         help="destination of the homer intermediate/output files",
         required=True
     )
-    ##Below here are critical files that always need to be referenced
     parser.add_argument(
         "--genome_fasta",
         help="location of all.fa file for genome of interest",
@@ -194,16 +193,17 @@ def call_main():
     args = parser.parse_args()
 
     #error checking
-    if args.clusters is None or args.species is None:
+    if args.peaks is None or args.species is None:
         parser.print_help()
         exit()
     main(
-        bedtool=args.clusters, species=args.species,
+        bedtool=args.peaks, species=args.species,
         motifs=args.motifs, k=args.k, nrand=args.nrand,
         genome_location=args.genome_fasta,
         motif_location=args.motif_location,
-        out_pickle=args.pickle, out_file=args.out_file,
-        homer_outdir=args.homer_out
+        out_pickle=args.out_pickle_file,
+        out_file=args.out_file,
+        homer_outdir=args.out_homer_dir
     )
 
 if __name__ == "__main__":
