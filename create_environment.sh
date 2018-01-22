@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-conda create -n analyze_motifs python=2.7
+conda create -y -n analyze_motifs python=2.7
 
 source activate analyze_motifs;
 
@@ -11,3 +11,6 @@ conda install -y bx-python;
 conda install -y scikit-learn;
 conda install -y -c bioconda emboss; # unless emboss is already in the path
 conda install -y -c bioconda homer; # unless homer is already in the path
+
+## These are for C-libraries that compseq needs ##
+export LD_LIBRARY_PATH=/opt/intel/composer_xe_2015.2.164/compiler/lib/intel64/:$LD_LIBRARY_PATH

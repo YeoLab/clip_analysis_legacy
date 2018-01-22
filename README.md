@@ -41,6 +41,11 @@ analyze_motifs \
 #### Regarding output parameters...
 In the above example, you do NOT need the 204_01_RBFOX2_homer_out/ to exist, but you DO need to make sure outputs/ exists
 
+# Notes about installation:
+
+Sometimes compseq will fail if the proper C-libraries aren't found. If this is the case, make sure to append the proper libraries 
+onto your ```LD_LIBRARY_PATH``` (on TSCC, the libraries are located in /opt/intel/ (see ```create_environment.sh```).
+
 # Notes about data/regions:
 
 This package expects the following files inside data/regions:
@@ -50,6 +55,8 @@ This package expects the following files inside data/regions:
 - ${SPECIES}_distintron500.bed
 - ${SPECIES}_five_prime_utrs.bed
 - ${SPECIES}_three_prime_utrs.bed
+- ${SPECIES}_exons.bed
+- ${SPECIES}_genes.bed
 
 where $(SPECIES) is something like: 'hg19' or 'hg19_v19'. Analyze_motifs needs these
  regions to define where to select the random backgrounds from.
