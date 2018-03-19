@@ -4,13 +4,24 @@ conda create -y -n analyze_motifs python=2.7
 
 source activate analyze_motifs;
 
-conda install -y matplotlib numpy pandas htseq seaborn;
-conda install -y bedtools=2.26 pybedtools; # bedtools 2.27.1 breaks; BED6 files cause segfaults.
+conda install -c anaconda -y \
+matplotlib \
+numpy \
+pandas \
+htseq \
+seaborn \
+scikit-learn;
+
+conda install -c bioconda -y \
+bedtools=2.26 pybedtools \
+bx-python \
+emboss \
+homer;
+
+# bedtools 2.27.1 breaks; BED6 files cause segfaults.
+# unless homer/emboss is already in the path
+
 pip install cairosvg==1.0.22; # cairo 2.0 is python3+ compatible only
-conda install -y bx-python;
-conda install -y scikit-learn;
-conda install -y -c bioconda emboss; # unless emboss is already in the path
-conda install -y -c bioconda homer; # unless homer is already in the path
 
 ## These are for C-libraries that compseq needs ##
 export LD_LIBRARY_PATH=/opt/intel/composer_xe_2015.2.164/compiler/lib/intel64/:$LD_LIBRARY_PATH
