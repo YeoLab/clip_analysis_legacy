@@ -137,8 +137,6 @@ dependencies:
   - zlib=1.2.11=h166bdaf_1014
   - zstd=1.4.5=h9ceee32_0
   - pip:
-    - analyze-motifs==0.0.5
     - cairocffi==0.9.0
     - cairosvg==1.0.22
     - pycairo==1.18.2
-prefix: /home/bay001/anaconda2/envs/jupyter/envs/analyze_motifs
